@@ -1,6 +1,7 @@
 # Notebook setup 
 
-Linux software and configs that run on a normal alpine linux install
+Linux desktop software and configs that run on a normal alpine linux install. 
+Target user account: rrausch
 
 ## Software
 
@@ -8,3 +9,6 @@ Linux software and configs that run on a normal alpine linux install
 - foot
 - dmenu-wayland
 
+## TODO
+
+- .profile
