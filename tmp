@@ -1,0 +1,289 @@
+which sudo
+which doas
+doas vi /etc/motd
+clear
+logout
+eit
+exit
+echo $XDG_RUNTIME_DIR
+export XDG_RUNTIME_DIR=/tmp/tmptmptmp122
+mkdir -pm 0700 $XDG_RUNTIME_DIR
+echo $XDG_RUNTIME_DIR
+river
+reboot
+doas reboot
+river
+apk -h
+apk update
+doas apk update
+doas apk upgrade
+river
+export XDG_RUNTIME_DIR=/tmp/tmptmptmp122
+mkdir -pm 0700 $XDG_RUNTIME_DIR
+river
+apk add seatd
+doas apk add seatd
+su root
+river
+ls
+ls /a
+ls -a
+vi .config/river/init
+riverctl keyboard-layout de
+vi .config/river/init
+ls
+doas mv tmp .config/river/init 
+doas vi .config/river/init
+doas pkg add firefox
+doas apk add firefox
+firefox
+doas vi .config/river/init
+doas apk add meson
+ls
+mkdir Apps
+cd Apps/
+firefox
+git clone https://github.com/philj56/tofi.git
+cd tofi/
+meson build
+pkg add gcc
+doas apk add gcc
+meson build
+doas apk add cc
+meson build
+ls
+cd src/
+ls
+meson setup
+cd ..
+cat  meson.build 
+doas apk add build-base
+meson setup
+meson build
+doas apk add wayland-libs-client
+doas apk add wayland-dev
+doas apk add wayland-libs-egl
+meson build
+cd ..
+rm -rf tofi/
+git clone https://github.com/nyyManni/dmenu-wayland.git
+cd dmenu-wayland/
+ls
+cat dmenu-wl_run 
+mkdir build
+meson build
+doas apk add cairo
+doas apk add cairo-dev
+meson build
+doas apk add pango-dev
+meson build
+doas apk add wayland-protocols
+doas apk add wayland-protocols-dev
+meson build
+doas apk add xkbcommon-dev
+doas apk add xkbcommon
+doas apk add libxkbcommon-dev
+doas apk add libxkbcommon-static
+meson build
+ninja -C build
+doas ninja -C build install
+doas vi .config/river/init
+doas vi ~/.config/river/init
+exit
+chmod +x ~/.config/river/init 
+river
+doas vi ~/.config/river/init
+dmenu-wl_run -i
+doas vi ~/.config/river/init
+dmenu-wl_run -i
+doas vi ~/.config/river/init
+riverctl map normal $MOD W spawn "dmenu-wl_run -i"
+riverctl map normal Super W spawn "dmenu-wl_run -i"
+doas vi ~/.config/river/init
+riverctl map normal $MOD N exit
+riverctl map normal Super N exit
+cat ~/.config/river/init
+rivertile -view-padding 6 -outer-padding 1
+riverctl rivertile -view-padding 6 -outer-padding 1
+head -n 20 ~/.config/river/init
+head -n 25 ~/.config/river/init
+head -n 30 ~/.config/river/init
+rivertile -h
+rivertile -view-padding 6 -outer-padding 1
+rivertile -view-padding 2
+doas vi ~/.config/river/init
+ls -a
+mkdir .themes
+rm .th
+rm .themes/
+cd /usr/share/themes/
+ls
+cat Default/gtk-3.0/gtk-keys.css 
+cat Emacs/gtk-3.0/gtk-keys.css 
+cp ~/Downloads/Arc-Darkest-2.1.5.tar ~
+ls
+cp ~/Downloads/Arc-Darkest-2.1.5.tar .
+doas mv ~/Downloads/Arc-Darkest-2.1.5.tar .
+ls
+tar -xvf Arc-Darkest-2.1.5.tar 
+doas tar -xvf Arc-Darkest-2.1.5.tar 
+ls
+doas rm Arc-Darkest-2.1.5.tar 
+doas rm ~/Arc-Darkest-2.1.5.tar 
+ls
+cd Arc-Darkest/
+ls
+cd ..
+gsettings -h
+gsettings list-schemas
+gsettings set org.gnome.desktop.interface gtk-theme Arc-Darkest
+doas apk add lapce
+less .config/river/init 
+ls
+mkdir code
+cd code
+doas apk add rustup
+rustup-init 
+less .config/river/init 
+ls
+cd code/
+cargo 
+which cargo
+cat .profile 
+export PATH=$PATH
+echo $PATH
+echo $PATH:$HOME/.cargo/env
+export PATH=$PATH:$HOME/.cargo/env
+echo $PATH
+export PATH=$PATH:$HOME/.cargo/env
+cargo 
+ls -l .cargo/bin/
+export PATH=$PATH:$HOME/.cargo/bin
+vim .bashrc
+vi .bashrc
+ls -a
+vi .profle
+cargo
+cd code/
+ls
+cago
+cargo init
+export PATH=$PATH:$HOME/.cargo/bin
+cargo init
+ls
+rm Cargo.toml 
+rm -r src
+cargo init -h
+cargo init startup
+shutdown now
+poweroff
+doas poweroff
+ls
+cd code
+river
+cd ..
+vim .profile 
+vi .profile 
+. .profile 
+river
+apk add thunar
+doas apk add thunar
+./.config/river/init 
+vim ./.config/river/init 
+vi ./.config/river/init 
+./.config/river/init 
+vim .profile 
+vi .profile 
+npoweroff
+poweroff
+doas poweroff
+mv .config/river/init .config/river/_oldinit
+doas mv .config/river/init .config/river/_oldinit
+cp Downloads/riverconf .config/river/init
+doas cp Downloads/riverconf .config/river/init
+doas chmod +X .config/river/init 
+doas chmod +x .config/river/init 
+./.config/river/init 
+./.config/river/init
+doas ./.config/river/init 
+doas chmod +X .config/river/init 
+doas ./.config/river/init 
+cd .config/river/
+l
+sls
+ls
+init
+./init
+doas ./init
+doas chmod +X init 
+doas ./init
+doas chmod +x init 
+doas ./init
+doas thunar
+su root
+./init
+. init
+. mv init initbin
+mv init initbin
+top -n 2 _oldinit 
+top -n 2 "_oldinit"
+top "_oldinit" -n 2
+mv _oldinit oldinit
+top "oldinit" -n 2
+top -n 2 "oldinit"
+head -n 1 oldinit 
+head -n 1 oldinit > init
+vi init
+./init
+chmod +x init
+./init
+mv initbin bininit
+./init
+./bininit
+exec bininit 
+vi .config/river/init 
+./.config/river/init 
+doas powerdown
+doas powerdown
+doas poweroff
+vim .profle 
+vi .profle 
+rm .profle 
+vim .profile 
+vi profile
+vi .profile
+rm .config/river/init 
+mv .config/river/oldinit .config/river/init
+river
+ssh-keygen -t ed25519 -C "rauschrichard54@gmail.com"
+doas apk -S ssh-keygen
+doas apk add ssh-keygen
+doas apk add openssh-keygen
+ssh-keygen -t ed25519 -C "rauschrichard54@gmail.com"
+vim .profile 
+vi .profile 
+ssh-add ~/.ssh/id_ed25519
+ssh-agent -s
+doas apk add openssh
+ssh-agent -s
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+rm .ssh/id_ed25519
+rm .ssh/id_ed25519.pub 
+ssh-keygen -t ed25519 -C "rauschrichard54@gmail.com"
+ssh-add ~/.ssh/id_ed25519
+cat .ssh/id_ed25519.pub 
+ssh -T git@github.com
+ls
+git clone git@github.com:NobodyForNothing/elitebook-conf.git
+cd elitebook-conf/
+ls -a
+vi README.md
+git add README.md 
+git commit -m "initial commit"
+git pushgit config --global --edit
+git config --global --edit
+git commit --amend --reset-author
+git push
+cat ~/.ash_history 
+cp ~/.ash_history tmp
