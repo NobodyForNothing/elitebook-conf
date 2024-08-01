@@ -29,11 +29,12 @@ apk add build-base meson cairo cairo-dev pango-dev wayland-protocols wayland-pro
 # - name and email
 
 # dmenu-wayland
-su rrausch -c mkdir /home/rrausch/apps
-su rrausch -c cd /home/rrausch/apps
-su rrausch -c git clone https://github.com/nyyManni/dmenu-wayland.git
-su rrausch -c cd dmenu-wayland
-su rrausch -c meson build
-su rrausch -c ninja -C build
+doas -u rrausch eval("\
+mkdir /home/rrausch/apps\
+cd /home/rrausch/apps\
+git clone https://github.com/nyyManni/dmenu-wayland.git\
+cd dmenu-wayland\
+meson build\
+ninja -C build")
 cd /home/rrausch/apps/dmenu-wayland
-doas ninja -C build install
+ninja -C build install
