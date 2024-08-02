@@ -167,10 +167,6 @@ fn main() {
     }
 
     // Notifications
-    Command::new("dbus-daemon")
-        .arg("--session")
-        .arg(format!("--address=unix:path={}/bus", env::var("XDG_RUNTIME_DIR").unwrap()))
-        .spawn().unwrap();
     Command::new("mako").spawn().unwrap();
 
     // Layout
