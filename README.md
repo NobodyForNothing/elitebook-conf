@@ -12,3 +12,7 @@ Target user account: rrausch
 ## TODO
 
 - .profile
+- configure brightnessctl to not require root
+- notification: https://github.com/emersion/mako
+- some bar: https://codeberg.org/river/wiki/src/branch/master/pages/Recommended-Software.md
+- https://codeberg.org/ifreund/waylock

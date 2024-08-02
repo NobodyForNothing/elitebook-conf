@@ -1,3 +1,6 @@
+# CURRENTLY NOT A SCRIPT
+# handle more like an instruction on what general steps to do
+
 # Setup files
 echo "https://alpine.mirror.wearetriple.com/edge/main
 https://alpine.mirror.wearetriple.com/edge/
@@ -21,7 +24,7 @@ service seatd start # start it now
 adduser rrausch seat # allow user to access seatd
 
 # Desktop software
-apk add firefox thunar git
+apk add firefox thunar git gvfs
 apk add build-base meson cairo cairo-dev pango-dev wayland-protocols wayland-protocols-dev libxkbcommon-dev
 
 # TODO git setup:
