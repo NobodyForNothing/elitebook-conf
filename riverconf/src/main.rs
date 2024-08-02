@@ -4,6 +4,7 @@
 // - pamixer - https://github.com/cdemoulins/pamixer
 // - foot - https://codeberg.org/dnkl/foot
 // - dmenu-wl_run - https://github.com/nyyManni/dmenu-wayland
+// - mako -  https://github.com/emersion/mako
 
 use std::os::unix::process::CommandExt;
 use std::process::{Child, Command};
@@ -164,6 +165,14 @@ fn main() {
         assert!(res.success());
     }
 
+    // Notifications
+    Command::new("dbus-daemon")
+        .arg("--session")
+        .arg("--address=unix:path=$XDG_RUNTIME_DIR/bus")
+        .spawn().unwrap();
+    Command::new("mako").spawn().unwrap();
+
+    // Layout
     Command::new("rivertile")
         .arg("-view-padding")
         .arg("1")
