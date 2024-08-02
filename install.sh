@@ -1,5 +1,5 @@
 # build binaries
-cd riverconf || echo "wrong cwd" && exit
+cd riverconf || (echo "wrong cwd" && exit)
 cargo build --release || exit
 cd ..
 
