@@ -6,6 +6,7 @@
 // - dmenu-wl_run - https://github.com/nyyManni/dmenu-wayland
 // - mako -  https://github.com/emersion/mako
 
+use std::env;
 use std::os::unix::process::CommandExt;
 use std::process::{Child, Command};
 
@@ -168,7 +169,7 @@ fn main() {
     // Notifications
     Command::new("dbus-daemon")
         .arg("--session")
-        .arg("--address=unix:path=$XDG_RUNTIME_DIR/bus")
+        .arg(format!("--address=unix:path={}/bus", env::var("XDG_RUNTIME_DIR").unwrap()))
         .spawn().unwrap();
     Command::new("mako").spawn().unwrap();
 
