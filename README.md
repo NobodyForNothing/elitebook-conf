@@ -3,6 +3,8 @@
 Linux desktop software and configs that run on a normal alpine linux install. 
 Target user account: rrausch
 
+After installing all software manually install.sh can be run to copy configurations and custom software.
+
 ## Software
 
 - river compositor
