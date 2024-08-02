@@ -1,6 +1,6 @@
 background-color=#000000
 text-color=#FFFFFF
-border-size=2
+border-size=1
 border-color=#FFFFFF
 border-radius=5
 progress-color=over #33CC33
@@ -8,5 +8,5 @@ max-icon-size=32
 icon-location=right
 
 format=%a - <b>%s</b>\n%b
-default-timeout=5
+default-timeout=7500
 layer=overlay
