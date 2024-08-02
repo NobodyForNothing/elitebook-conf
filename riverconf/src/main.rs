@@ -175,6 +175,6 @@ fn main() {
         .arg("1")
         .arg("-outer-padding")
         .arg("0")
-        .exec();
+        .spawn().unwrap();
 }
 
