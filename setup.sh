@@ -23,8 +23,11 @@ rc-update add seatd # configure it to auto-start
 service seatd start # start it now
 adduser rrausch seat # allow user to access seatd
 
+# mako
+apk add mako mako-doc mako-bash-completion
+
 # Desktop software
-apk add firefox thunar git gvfs
+apk add firefox thunar git gvfs mandoc
 apk add build-base meson cairo cairo-dev pango-dev wayland-protocols wayland-protocols-dev libxkbcommon-dev
 
 # TODO git setup:
