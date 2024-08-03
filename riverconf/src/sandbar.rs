@@ -97,9 +97,9 @@ fn meminfo_key(key: &str) -> Option<u64> {
 fn battery_status() -> Option<String> {
     let status = fs::read_to_string("/sys/class/power_supply/BAT0/status").ok()?;
     match status.as_str() {
-        "Charging" => Some(String::from("⚡")),
-        "Discharging" => Some(String::from("🔋")),
-        "Not charging" | "Full" => Some(String::from("🔌")),
-        "Unknown" | _ => None,
+        "Charging\n" => Some(String::from("⚡")),
+        "Discharging\n" => Some(String::from("🔋")),
+        "Not charging\n" | "Full\n" => Some(String::from("🔌")),
+        "Unknown\n" | _ => None,
     }
 }
