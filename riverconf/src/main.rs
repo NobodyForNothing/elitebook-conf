@@ -5,11 +5,11 @@
 // - foot - https://codeberg.org/dnkl/foot
 // - dmenu-wl_run - https://github.com/nyyManni/dmenu-wayland
 // - mako -  https://github.com/emersion/mako
+// - sandbar - https://github.com/kolunmi/sandbar
 
-use std::env;
-use std::os::unix::process::CommandExt;
 use std::process::{Child, Command};
 
+mod sandbar;
 
 /// Used to invoke riverctl
 const RIVERCTL_PATH: &'static str = "riverctl";
@@ -166,9 +166,6 @@ fn main() {
         assert!(res.success());
     }
 
-    // Notifications
-    Command::new("mako").spawn().unwrap();
-
     // Layout
     Command::new("rivertile")
         .arg("-view-padding")
@@ -176,5 +173,11 @@ fn main() {
         .arg("-outer-padding")
         .arg("0")
         .spawn().unwrap();
+
+    // Notifications
+    Command::new("mako").spawn().unwrap();
+
+    // Status bar
+    sandbar::launch_sandbar();
 }
 
