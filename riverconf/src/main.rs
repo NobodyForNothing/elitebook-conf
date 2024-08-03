@@ -109,12 +109,22 @@ fn main() {
         .spawn().unwrap());
     for i in 1u8..10u8 {
         let tags = 1u8 << (i - 1);
+        // Allow changing tag (workspace)
         spawned.push(Command::new(RIVERCTL_PATH)
             .arg("map")
             .arg("normal")
             .arg(MOD_KEY)
             .arg(i.to_string())
             .arg("set-focused-tags")
+            .arg(tags.to_string())
+            .spawn().unwrap());
+        // move windows between tags
+        spawned.push(Command::new(RIVERCTL_PATH)
+            .arg("map")
+            .arg("normal")
+            .arg(format!("{MOD_KEY}+Shift"))
+            .arg(i.to_string())
+            .arg("set-view-tags")
             .arg(tags.to_string())
             .spawn().unwrap());
     }
@@ -159,6 +169,15 @@ fn main() {
         .arg("spawn")
         .arg(format!("'brightnessctl set {}%-'", BRIGHTNESS_MODIFY_STEP))
         .spawn().unwrap());
+    // TODO: Super+Shift+ arrow keys
+    /*
+    # Super+Alt+Shift+{H,J,K,L} to resize views
+    riverctl map normal Super+Alt+Shift H resize horizontal -100
+    riverctl map normal Super+Alt+Shift J resize vertical 100
+    riverctl map normal Super+Alt+Shift K resize vertical -100
+    riverctl map normal Super+Alt+Shift L resize horizontal 100
+
+     */
 
     for mut p in spawned {
         let res = p.wait().unwrap();

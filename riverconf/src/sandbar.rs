@@ -1,16 +1,26 @@
-use std::io::Write;
-use std::process::Command;
+use std::io::{Read, Write};
+use std::process::{Command, Stdio};
 use std::{fs, thread};
 use std::time::{Duration, Instant};
 
+const FONT: &'static str = "Inconsolata";
+const ACCENT: &'static str = "ff9900";
+
 /// Launch sandbar in a new thread.
 pub fn launch_sandbar() -> thread::JoinHandle<()> {
+    let mut status = Status::new();
+    println!("{}", str::from_utf8(s));
     thread::spawn(|| {
         let mut last_instant = Instant::now();
         let mut status = Status::new();
 
         // TODO: style https://github.com/kolunmi/sandbar?tab=readme-ov-file#example-setup
-        let mut sandbar = Command::new("sandbar").spawn().unwrap();
+        let mut sandbar = Command::new("sandbar")
+            .arg("-font").arg("Inconsolata")
+            .arg("-active-bg-color").arg("ff9900")
+            .arg("-title-bg-color").arg("ff9900")
+            .stdin(Stdio::piped())
+            .spawn().unwrap();
         let mut stdin = sandbar.stdin.take().unwrap();
 
         while !sandbar.try_wait().is_ok_and(|s| s.is_some()) {

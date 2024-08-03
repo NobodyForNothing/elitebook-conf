@@ -11,6 +11,7 @@ After installing all software manually install.sh can be run to copy configurati
 - foot
 - dmenu-wayland
 - mako
+- sandbar
 
 ### [Autologin](https://wiki.alpinelinux.org/wiki/TTY_Autologin)
 
@@ -20,6 +21,5 @@ To enable autologin copy the `autologin` file to `/usr/sbin` and in `/etc/initta
 
 - .profile
 - configure brightnessctl to not require root
-- notification:
-- some bar: https://codeberg.org/river/wiki/src/branch/master/pages/Recommended-Software.md
 - https://codeberg.org/ifreund/waylock
+- XDG configs
