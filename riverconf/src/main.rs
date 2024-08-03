@@ -41,7 +41,6 @@ const BRIGHTNESS_MODIFY_STEP: &'static str = "5";
 
 /// Script like rust program to configure the river wm to my liking.
 fn main() {
-
     let mut spawned: Vec<Child> = Vec::new();
 
     spawned.push(Command::new(RIVERCTL_PATH)
@@ -108,7 +107,7 @@ fn main() {
         .arg(FULLSCREEN_KEY)
         .arg("toggle-fullscreen")
         .spawn().unwrap());
-    for i in 1u8..9u8 {
+    for i in 1u8..10u8 {
         let tags = 1u8 << (i - 1);
         spawned.push(Command::new(RIVERCTL_PATH)
             .arg("map")
@@ -178,6 +177,6 @@ fn main() {
     Command::new("mako").spawn().unwrap();
 
     // Status bar
-    sandbar::launch_sandbar();
+    sandbar::launch_sandbar().join().unwrap();
 }
 

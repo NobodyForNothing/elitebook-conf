@@ -4,7 +4,7 @@ use std::{fs, thread};
 use std::time::{Duration, Instant};
 
 /// Launch sandbar in a new thread.
-pub fn launch_sandbar() {
+pub fn launch_sandbar() -> thread::JoinHandle<()> {
     thread::spawn(|| {
         let mut last_instant = Instant::now();
         let mut status = Status::new();
@@ -25,7 +25,7 @@ pub fn launch_sandbar() {
 
             last_instant = Instant::now();
         }
-    });
+    })
 }
 
 struct Status {
