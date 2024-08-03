@@ -1,24 +1,27 @@
-use std::io::{Read, Write};
+use std::io::{Write};
 use std::process::{Command, Stdio};
 use std::{fs, thread};
 use std::time::{Duration, Instant};
+use chrono::{Local};
+
+const UPDATE_INTERVAL: Duration = Duration::from_millis(250);
 
 const FONT: &'static str = "Inconsolata";
-const ACCENT: &'static str = "ff9900";
+const ACCENT: &'static str = "ee9900";
+const UNUSED_BG: &'static str = "000000";
 
 /// Launch sandbar in a new thread.
 pub fn launch_sandbar() -> thread::JoinHandle<()> {
-    let mut status = Status::new();
-    println!("{}", str::from_utf8(s));
     thread::spawn(|| {
         let mut last_instant = Instant::now();
         let mut status = Status::new();
 
         // TODO: style https://github.com/kolunmi/sandbar?tab=readme-ov-file#example-setup
         let mut sandbar = Command::new("sandbar")
-            .arg("-font").arg("Inconsolata")
-            .arg("-active-bg-color").arg("ff9900")
-            .arg("-title-bg-color").arg("ff9900")
+            .arg("-font").arg(FONT)
+            .arg("-active-bg-color").arg(ACCENT)
+            .arg("-inactive-bg-color").arg(UNUSED_BG)
+            .arg("-title-bg-color").arg(UNUSED_BG)
             .stdin(Stdio::piped())
             .spawn().unwrap();
         let mut stdin = sandbar.stdin.take().unwrap();
@@ -27,8 +30,8 @@ pub fn launch_sandbar() -> thread::JoinHandle<()> {
             let x = status.compute();
 
             let elapsed = last_instant.elapsed();
-            if elapsed < Duration::from_secs(1) {
-                thread::sleep(Duration::from_secs(1) - elapsed);
+            if elapsed < UPDATE_INTERVAL {
+                thread::sleep(UPDATE_INTERVAL - elapsed);
             }
 
             stdin.write(&x).unwrap();
@@ -51,13 +54,18 @@ impl Status {
         }
     }
     fn compute(&mut self) -> &[u8] {
+        let time = time();
         let cpu = cpu();
         let ram = self.total_ram - meminfo_key("MemAvailable").unwrap_or(0);
         let battery = fs::read_to_string("/sys/class/power_supply/BAT0/capacity").unwrap_or(String::from("?"));
-        let bat_status = battery_status().unwrap_or(String::new());
-        self.last_status = format!("all status [ {cpu} CPU {ram} MEM ] [ {battery}% {bat_status} ]");
+        let bat_status = battery_status().unwrap_or(String::from("BAT"));
+        self.last_status = format!("all status {time} [ {cpu} CPU {ram} MEM ] [ {battery}% {bat_status} ]");
         self.last_status.as_bytes()
     }
+}
+
+fn time() -> String {
+    Local::now().format("%H:%M:%S").to_string()
 }
 
 fn cpu() -> String {
