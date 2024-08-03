@@ -29,6 +29,9 @@ apk add mako mako-doc mako-bash-completion
 # Desktop software
 apk add firefox thunar git gvfs mandoc
 apk add build-base meson cairo cairo-dev pango-dev wayland-protocols wayland-protocols-dev libxkbcommon-dev
+#  defaults
+apk add xdg-desktop-portal xdg-document-portal xdg-utils xdg-utils-doc xdg-desktop-portal-wlr
+xdg-mime default thunar.desktop inode/directory
 
 # TODO git setup:
 # - ssh-keys
