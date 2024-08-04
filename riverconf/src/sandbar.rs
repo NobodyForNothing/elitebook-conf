@@ -59,7 +59,7 @@ impl Status {
         let ram = self.total_ram - meminfo_key("MemAvailable").unwrap_or(0);
         let battery = fs::read_to_string("/sys/class/power_supply/BAT0/capacity").unwrap_or(String::from("?"));
         let bat_status = battery_status().unwrap_or(String::from("BAT"));
-        self.last_status = format!("all status {time} [ {cpu} CPU {ram} MEM ] [ {battery}% {bat_status} ]");
+        self.last_status = format!("all status {time} - {cpu}CPU {ram}MEM - {battery}% {bat_status}");
         self.last_status.as_bytes()
     }
 }
