@@ -4,6 +4,10 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn main() {
+    let mut path = std::env::var("PATH").unwrap_or(String::new());
+    path.push_str(":/home/derdilla/.cargo/bin");
+    std::env::set_var("PATH", path);
+
     let xdg_runtime_dir = std::env::var("XDG_RUNTIME_DIR").unwrap_or_else(|_| {
         let var = format!("/tmp/{}-runtime-dir", nix::unistd::geteuid());
         std::env::set_var("XDG_RUNTIME_DIR", &var);
