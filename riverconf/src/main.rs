@@ -170,6 +170,22 @@ fn main() {
         .arg(format!("'brightnessctl set {}%-'", BRIGHTNESS_MODIFY_STEP))
         .spawn().unwrap());
     // TODO: Super+Shift+ arrow keys
+    spawned.push(Command::new(RIVERCTL_PATH)
+        .arg("map")
+        .arg("normal")
+        .arg("Super+Shift")
+        .arg("Right")
+        .arg("swap")
+        .arg("next")
+        .spawn().unwrap());
+    spawned.push(Command::new(RIVERCTL_PATH)
+        .arg("map")
+        .arg("normal")
+        .arg("Super+Shift")
+        .arg("Left")
+        .arg("swap")
+        .arg("previous")
+        .spawn().unwrap());
     /*
     # Super+Alt+Shift+{H,J,K,L} to resize views
     riverctl map normal Super+Alt+Shift H resize horizontal -100
