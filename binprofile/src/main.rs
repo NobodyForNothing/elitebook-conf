@@ -5,7 +5,8 @@ use std::process::Command;
 
 fn main() {
     let mut path = std::env::var("PATH").unwrap_or(String::new());
-    path.push_str(":/home/derdilla/.cargo/bin");
+    path.push_str(":/home/rrausch/.cargo/bin");
+    path.push_str(":/home/rrausch/go/bin");
     std::env::set_var("PATH", path);
 
     let xdg_runtime_dir = std::env::var("XDG_RUNTIME_DIR").unwrap_or_else(|_| {
